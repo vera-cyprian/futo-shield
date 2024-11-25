@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Topic Below</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Styling for the header */
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .social-icons a {
+            margin-right: 15px;
+            color: black;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .navbar-brand span {
+            color: #e63946; /* Different color for one letter */
+        }
+        .navbar-nav .nav-link {
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .carousel-item {
+            min-height: 550px;
+            height: auto;
+            background: no-repeat center center scroll;
+            background-size: cover;
+            position: relative;
+        }
+
+
+        .content-container {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+        .image-section img {
+            width: 100%;
+            height: auto;
+        }
+        .details-section {
+            padding: 20px;
+        }
+        .details-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .details-section p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .meta-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+        .meta-info span {
+            display: flex;
+            align-items: center;
+        }
+        .meta-info span i {
+            margin-right: 5px;
+        }
+
+        /* comment style  */
+        .comment-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .comment-header h5 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .comment-header span {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        .comment-body p {
+            margin: 0;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        .comment-footer {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .comment-footer i {
+            margin-right: 5px;
+            color: #007bff;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 40px 0;
+            position: relative;
+        }
+        .footer h5 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .footer .social-icons a {
+            margin-right: 10px;
+            font-size: 18px;
+            color: #ccc;
+        }
+        .footer .social-icons a:hover {
+            color: #fff;
+        }
+        .footer .contact-info {
+            margin-top: 20px;
+        }
+        .contact-info .fa {
+            border: 1px solid green;
+            border-radius: 15px;
+            padding: 6px;
+            background-color: green;
+        }
+        .footer .contact-info a {
+            display: block;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+        .footer .contact-info a:hover {
+            color: #fff;
+        }
+        .footer .newsletter-form input {
+            width: calc(100% - 120px);
+            margin-right: 10px;
+            padding: 5px;
+        }
+        .footer .newsletter-form button {
+            padding: 5px 20px;
+        }
+        .footer .powered-by {
+            color: #999;
+            text-align: center;
+        }
+        .col-md-4 span {
+            color: #e63946;
+        }
+    </style>
+</head>
+<body>
+    <header class="container">
+        <!-- Top Section with Social Icons -->
+        <div class="header-top">
+            <div class="social-icons">
+                <a href="#"><i class="fa fa-facebook-f"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+            <div class="navbar-brand">Futo <i><span>Shield</span></i></div>
+            <div class="d-flex">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-danger" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="home.html">HOME</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">CRIME</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="assault.html">Rape</a></li>
+                                <li><a class="dropdown-item" href="assault.html">Assault</a></li>
+                                <li><a class="dropdown-item" href="#">Robbery</a></li>
+                                <li><a class="dropdown-item" href="#">Burglary</a></li>
+                                <li><a class="dropdown-item" href="#">Vandalism</a></li>
+                                <li><a class="dropdown-item" href="#">Theft</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact-section">CONTACT </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <div class="content-container">
+            <!-- Top Image Section -->
+            <div class="image-section">
+                <img src="images/Assail.jpg" alt="Placeholder Image">
+            </div>
+            <!-- Details Section -->
+            <div class="details-section">
+                <h2>Assault with intent to commit unnatural offences</h2>
+                <p>With the rise of new technologies, cybersecurity has become more critical than ever. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dolore expedita quaerat ex, provident atque ea optio accusamus debitis. Recusandae, sed minima ad ut explicabo vel saepe aliquid? Provident, obcaecati. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil quidem, repudiandae, nobis earum laboriosam iure similique laborum pariatur nemo ea voluptatem facilis odit, fuga dolor facere sapiente magni mollitia! This article delves into the latest trends shaping the future of cybersecurity,from artificial intelligence-driven defenses to advanced encryption techniques. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum dignissimos accusamus in voluptates aspernatur facere quasi natus iure aliquam, illo, repellendus ad nesciunt perferendis, odit sit voluptas repudiandae doloribus ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ducimus tempora, quos, beatae eius alias iusto consequuntur laudantium mollitia, quisquam voluptates dolorum aliquid illo harum non pariatur laborum facere repudiandae?</p>
+            </div>
+        </div>
+    </div>
+
+        <!-- actual comment codes -->
+        <div class="container">
+            <div class="comment-container">
+                <!-- Comment Header -->
+                <div class="comment-header">
+                    <h5 style="color: #e63946;">John Doe</h5>
+                    <span style="color: #e63946;">johndoe@gmail.com</span>
+                </div>
+                <!-- Comment Body -->
+                <div class="comment-body">
+                    <p>I completely agree with your take on this. I mean what exactly is the point of men hurting and assaulting vulnerable ladies. It is unfair and this needs to be handled accordingly.</p>
+                </div>
+            </div>
+        </div>
+
+    <!-- comment area -->
+    <div class="container mt-5">
+        <h3>Add Your Comment</h3>
+        <form>
+            <!-- Full Name Field -->
+            <div class="mb-3">
+                <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+            </div>
+            
+            <!-- Email Field -->
+            <div class="mb-3">
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            
+            <!-- Comment Text Area -->
+            <div class="mb-3">
+                <textarea class="form-control" id="comment" rows="5" placeholder="Write your comment here" required></textarea>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-outline-danger" style="margin-bottom: 30px;">Submit Content</button>
+        </form>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Futo<span><i>Shield</i></span></h5>
+                    <!-- <img src="images/image1-removebg-preview.png" alt="Grocbakery Logo" style="max-width: 150px;"> -->
+                    <p>FutoShield is the business of securing students. All info at one place!</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google"></i></a>
+                        <a href="#"><i class="fa fa-share"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect Futo<span><i>Shield</i></span></h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-youtube"></i></a>
+                    </div>
+                    <div class="contact-info">
+                        <a href="tel:+(234)8128187301"><i class="fa fa-phone"></i> +(234)8156588861</a>
+                        <a href="mailto:info@futoshield.com"><i class="fa fa-envelope"></i> info@futo<span>shield</span>.com</a>
+                        <a href="#"><i class="fa fa-map"></i> FUTO, Imo State</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Newsletter</h5>
+                    <form class="newsletter-form d-flex align-items-center">
+                        <input type="email" placeholder="Email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+                <div class="powered-by">
+                    © FUTOSHIELD. ALL RIGHTS RESERVED. POWERED BY <span style="color: #e63946;">FUTO</span>.
+                </div>
+        </div>
+        
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+</body>
+</html>
